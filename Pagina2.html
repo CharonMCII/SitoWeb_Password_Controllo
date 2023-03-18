@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Background animato con effetto di sfumatura</title>
+    <style>
+      .gradient-background {
+        background: linear-gradient(209deg,#ffffff,#c018ae,#041cff,#0695c2);
+        background-size: 240% 240%;
+        animation: gradient-animation 8s ease infinite;
+      }
+
+      @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      body{
+        height:100%;
+      }
+      html{
+        min-height:100%;
+      }
+      h1{
+        color: white;
+        text-align: center;
+        font-size: 72px;
+      }
+      .feedback-label {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px;
+        background-color: #2ecc71;
+        border-radius: 5px;
+      }
+
+      .feedback-label span {
+        color: #fff;
+        font-weight: bold;
+      }
+
+      .stars {
+        display: inline-block;
+      }
+
+      .stars input[type="radio"] {
+        display: none;
+      }
+
+      .stars label {
+        display: inline-block;
+        cursor: pointer;
+        color: #fff;
+        font-size: 30px;
+        font-family: 'Arial', sans-serif;
+      }
+
+      .stars label:before {
+        content: "\2605";
+      }
+
+      .stars label:hover:before,
+      .stars label:hover ~ label:before {
+        content: "\2605";
+        color: #f1c40f;
+      }
+
+      .stars input[type="radio"]:checked ~ label:before {
+        content: "\2605";
+        color: #f1c40f;
+      }
+      .myButton {
+      	box-shadow: 7px 15px 14px -7px #3e7327;
+      	background:linear-gradient(to bottom, #77b55a 5%, #72b352 100%);
+      	background-color:#77b55a;
+      	border-radius:13px;
+      	border:1px solid #4b8f29;
+      	display:inline-block;
+      	cursor:pointer;
+      	color:#ffffff;
+      	font-family:Arial;
+      	font-size:15px;
+      	font-weight:bold;
+      	padding:11px 30px;
+      	text-decoration:none;
+      	text-shadow:0px 1px 0px #5b8a3c;
+      }
+      .myButton:hover {
+      	background:linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
+      	background-color:#72b352;
+      }
+      .myButton:active {
+      	position:relative;
+      	top:1px;
+      }
+      #scelta
+      {
+        color:white;
+        margin-top: -50px;
+        font-size: 18px;
+        text-align: center;
+      }
+      .allign
+      {
+        text-align: center;
+      }
+
+
+</style>
+  </head>
+  <body class="gradient-background">
+    <h1>Benvenuto</h1>
+      <div class="feedback-label">
+        <span>Valuta il sito:</span>
+        <div class="stars">
+          <input type="radio" id="star5" name="rating" value="5"/>
+          <label for="star5" title="Bellissimo"></label>
+          <input type="radio" id="star4" name="rating" value="4"/>
+          <label for="star4" title="Molto buono"></label>
+          <input type="radio" id="star3" name="rating" value="3"/>
+          <label for="star3" title="Buono"></label>
+          <input type="radio" id="star2" name="rating" value="2"/>
+          <label for="star2" title="Scarsino"></label>
+          <input type="radio" id="star1" name="rating" value="1"/>
+          <label for="star1" title="Penoso"></label>
+        </div>
+      </div>
+      <p id="scelta">Che cosa vuoi fare ?</p>
+      <div class="allign">
+      <a href="#" class="myButton">Prelievo</a><br><br>
+      <a href="#" class="myButton">Deposito</a><br><br>
+      <a href="#" class="myButton">Chiudi Conto</a><br><br>
+      <a href="#" class="myButton">Assistenza</a><br><br>
+    </div>
+
+
+  </body>
+</html>
